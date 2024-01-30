@@ -1,0 +1,181 @@
+/<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!------Favicon------>
+ <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+ <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+ <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+ <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+ <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+ <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+ <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+ <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+ <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+ <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="manifest" href="/manifest.json">
+ <meta name="msapplication-TileColor" content="#ffffff">
+ <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+ <meta name="theme-color" content="#ffffff">
+    <!------Google Font------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Task App</title>
+    <!------ Required meta tags ----->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!----- Bootstrap CSS ------>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!------- css External Stylesheet ------>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+  <main id="image">
+    <body> 
+        
+          <!----------------Fixed(css) NavBar----------------->
+        <header>
+          <nav class="navbar navbar-expand navbar-white bg-*">
+              <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link button active" aria-current="page" href="#addtask">Add Task</a>
+                      </li>
+                    
+                      <li class="nav-item">
+                        <a class="nav-link button" href="#taskmanager">Manage Tasks</a>
+                      </li>  
+                      <li><i class="fa fa-facebook fa-lg"></i></li>  
+              </div>          
+        </header>  
+      
+          <br><br><br><br>
+
+          <div class="container bg-*">
+            <div class="row">    
+                <div class="col-12 col-sm-12 col-md-12">
+                  <!--Add a Task - Bootstrap card and forms: Name, Descrip., AssignedTo, DueDate, Status-->  
+                <div class="mx-auto" style="width: 70%;">
+                  <div class="card text-dark bg-light add-task">
+      
+                      <form id="newTaskForm">
+                          <h1 class="card-header" id="addtask">Add a Task</h1>
+          
+                        <section class="card-body text-dark">
+                          <div class="add-task">
+                              <label for="name" class="form-label">Name</label>
+                              <input type="text" class="form-control" id="newTaskNameInput" aria-describedby="name-of-task" placeholder="Name of Task">
+                          </div>
+          
+                          <br>
+          
+                          <div class="add-task">
+                              <label for="description" class="form-label">Description</label>
+                              <input type="text" class="form-control" id="newTaskDescription" aria-describedby="description-of-task" placeholder="Description of Task" >
+                          </div>
+          
+                          <br>
+          
+                          <div class="add-task">
+                              <label for="assign" class="form-label">Assigned To</label>
+                              <input type="text" class="form-control" id="newTaskAssignedTo" aria-describedby="assigned-to" placeholder="Task Assigned To">
+                          </div>
+          
+                          <br>
+          
+                          <div class="add-task">
+                              <label for="due-date" class="form-label">Due Date</label>
+                              <input type="date" class="form-control" id="newTaskDueDate" aria-describedby="due-date-of-task">
+                          </div>
+          
+                          <br>
+          
+                          <!-- <div class="add-task">
+                              <label for="status" class="form-label">Status</label>
+                              <input type="text" list="task-status" class="form-control" aria-describedby="status-of-task" placeholder="Status of Task" 
+                              id="newTaskStatus">                          </div>    
+       -->
+                          <br>
+      
+                          <div class="task-add-button">
+                              <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>                              
+                          </div>
+                          <div id ="alertMessage"></div> </div>
+                         </div>   
+                        </section>  
+                      </form> 
+                    </div> 
+                  </div>  
+                 </div> 
+              </div>
+          </div>    
+            
+    
+        <!------------------ Task Manager --------------------->
+        <br><br><br><br>    
+        <div class="container bg-* d-grid gap-4">
+            <div id="taskmanager"><h1 class="text-white">Task Manager</h1></div>
+            <ul id ="tasksList"></ul>  <!--Where code from createTaskHtml function place code-->        
+        </div>
+    <br>
+</main>    
+<footer>
+    <br>
+    <p>Made by Kharmalina, Davis & Tanya </p>
+    <span>&copy; 2022</span>
+  </footer>
+    
+    <!------ Javascript Bootstrap tags------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- Have to have taskManager.js  before index .js-->
+    <script src="js/taskManager.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
+
+
+    <!-- // validation code
+    const validFormFieldInput = () => {
+        if (!newTaskNameInput.value || !newTaskDescription.value || !newTaskAssignedTo.value || !newTaskDueDate.value) {
+            let errorList = [];
+            if (!newTaskNameInput.value) {
+                errorList.push(" Name");
+            }
+            if (!newTaskDescription.value) {
+                errorList.push(" Description");
+            }
+            if (!newTaskAssignedTo.value) {
+                errorList.push(" Assigned To");
+            }
+            if (!newTaskDueDate.value) {
+                errorList.push(" Due Date");
+            }
+            alert.classList.add("invalid-form-alert");
+            alert.classList.remove("hide-alert");
+            alert.innerHTML = `All fields are required! Please check the following field(s):${errorList.toString()}`;
+            return false;
+        }
+        else {
+            if (alert.classList.contains("invalid-form-alert")) {
+                alert.classList.remove("invalid-form-alert");
+                console.log("yay");
+            }
+            if (!alert.classList.contains("hide-alert")) {
+                alert.classList.add("hide-alert");
+            }
+            console.log(`name: ${newTaskNameInput.value} description: ${newTaskDescription.value} assigned: ${newTaskAssignedTo.value} due date: ${newTaskDueDate.value}`);
+            return true;
+        } 
+    
+    
+    }
